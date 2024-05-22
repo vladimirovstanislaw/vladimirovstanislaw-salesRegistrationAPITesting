@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.guava:guava'
+
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testImplementation('org.junit.jupiter:junit-jupiter-engine')
     testImplementation('org.junit.jupiter:junit-jupiter-params')//
@@ -28,5 +28,7 @@ dependencies {
     implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
 
 }
-
+test {
+    useJUnitPlatform()
+}
 tasks.build.dependsOn tasks.shadowJar
