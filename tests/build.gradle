@@ -1,10 +1,11 @@
 plugins {
     id 'java'
+
     id 'com.github.johnrengelman.shadow'
 }
 
 group 'salesRegistrationAPITesting'
-version 'unspecified'
+
 
 repositories {
     mavenCentral()
@@ -14,30 +15,18 @@ dependencies {
     implementation 'com.google.guava:guava'
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testImplementation('org.junit.jupiter:junit-jupiter-engine')
-    testImplementation('org.junit.jupiter:junit-jupiter-params')
+    testImplementation('org.junit.jupiter:junit-jupiter-params')//
     testImplementation('org.assertj:assertj-core')
     testImplementation('org.mockito:mockito-core')
     testImplementation('org.mockito:mockito-junit-jupiter')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     testImplementation('com.amazonaws:aws-java-sdk')
 
     testImplementation('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
     implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
-    testImplementation('org.springframework.boot:spring-boot-starter-web')
-}
-shadowJar {
-    archiveBaseName.set('gradleHelloWorld')
 
-    archiveVersion.set('0.1')
-    archiveClassifier.set('')
-    manifest {
-        attributes 'Main-Class': 'ru.ikon.App'
-    }
 }
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
-}
+
 tasks.build.dependsOn tasks.shadowJar

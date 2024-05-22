@@ -28,7 +28,7 @@ public interface Versions {
     String tomcatAnnotationsApi = "6.0.53";
 
     String kafkaClients = "3.0.0";
-    String springBootWebStarter = "3.2.1";
+    String springBootWebStarter = "3.2.0";
     String jacksonXmlFormat="2.13.3";
     String amazonSdkVersion="1.11.22";
 }
